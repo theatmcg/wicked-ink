@@ -1,0 +1,38 @@
+{
+  "name": "wicked-ink",
+  "version": "1.0.0",
+  "description": "A dark-gothic themed ai companion that can help you in various ways with journaling.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/theatmcg/wicked-ink.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/theatmcg/wicked-ink/issues"
+  },
+  "homepage": "https://github.com/theatmcg/wicked-ink#readme",
+  "dependencies": {
+    "@inquirer/prompts": "^8.5.2",
+    "better-sqlite3": "^13.0.3",
+    "commander": "^15.0.0",
+    "fs": "^0.0.1-security",
+    "gray-matter": "^4.0.3",
+    "marked": "^18.0.9",
+    "ollama": "^0.6.3",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^9.6.0",
+    "@types/marked": "^5.0.2",
+    "@types/node": "^26.2.0",
+    "tsx": "^4.23.11",
+    "typescript": "^7.0.2"
+  }
+}

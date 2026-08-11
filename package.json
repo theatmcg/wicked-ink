@@ -3,7 +3,12 @@
   "version": "1.0.0",
   "description": "A dark-gothic themed ai companion that can help you in various ways with journaling.",
   "main": "index.js",
+  "bin": {
+    "wicked": "./bin/wicked.mjs"
+  },
   "scripts": {
+    "start": "tsx src/index.ts",
+    "link": "npm link",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -22,16 +27,21 @@
     "@inquirer/prompts": "^8.5.2",
     "better-sqlite3": "^13.0.3",
     "commander": "^15.0.0",
+    "dotenv": "^17.4.2",
     "fs": "^0.0.1-security",
     "gray-matter": "^4.0.3",
+    "ink": "^7.1.1",
+    "ink-select-input": "^6.2.0",
     "marked": "^18.0.9",
     "ollama": "^0.6.3",
-    "path": "^0.12.7"
+    "path": "^0.12.7",
+    "react": "^19.2.8"
   },
   "devDependencies": {
     "@types/better-sqlite3": "^9.6.0",
     "@types/marked": "^5.0.2",
     "@types/node": "^26.2.0",
+    "@types/react": "^19.2.18",
     "tsx": "^4.23.11",
     "typescript": "^7.0.2"
   }

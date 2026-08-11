@@ -1,13 +1,23 @@
-import { input } from '@inquirer/prompts';
-import { JournalRepository } from './repositories/journal.repository.js';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+import dotenv from 'dotenv';
+import { Command } from 'commander';
+import { read } from './commands/read.js';
+import { shell } from './commands/shell.js';
 
-const journal = new JournalRepository();
+const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+dotenv.config({ path: path.join(root, '.env'), quiet: true });
 
-const entry = await input({
-    message: 'How was your day?'
-});
+const program = new Command();
 
-const savedPath = journal.save(entry);
+program
+    .name('wicked')
+    .description('A dark-gothic journaling companion')
+    .action(shell);
 
-console.log('\nJournal entry saved to:');
-console.log(savedPath);
+program
+    .command('read [nameOrPath]')
+    .description('Read a reflection by name/path, or interactively select one')
+    .action(read);
+
+await program.parseAsync();
